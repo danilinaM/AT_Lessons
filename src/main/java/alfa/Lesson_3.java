@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Lesson_3 {
     public static void main(String[] args) {
+        //Сравнивание количества и состава корзин
         String[] petyaBasket = {"курица", "бананы", "творог" };
         String[] kolyaBasket = {"курица", "бананы", "творог" };
         String[] terentiyBasket = {"пиво", "пельмени", "ласка магия черного" };
@@ -13,6 +14,7 @@ public class Lesson_3 {
         String compareBasketContentPetyaTerentiy = Arrays.equals(petyaBasket, terentiyBasket) ? "У Пети и Терентия одинаковые товары в корзине" : "У Пети и Терентия разные товары в корзине";
         System.out.println(compareBasketSizePetyaKolya + "\n" + compareBasketSizePetyaTerentiy + "\n" + compareBasketContentPetyaKolya + "\n" + compareBasketContentPetyaTerentiy);
 
+        //Вычисление самого длинного, самого короткого названия товара и средней длины всех названий товаров
         String[][] all = {petyaBasket, kolyaBasket, terentiyBasket};
         String longest = all[0][0];
         String shortest = all[0][0];
@@ -34,19 +36,14 @@ public class Lesson_3 {
         avgLength = (double) fullLength / count;
         System.out.println("Товар с самым длинным названием : " + longest + "\n" + "Товар с самым коротким названием : " + shortest + "\n" + "Средняя длина названия : " + avgLength);
 
-        String[] passwords = {"Qwerty", "1234567890", "Adhgfn)$*%23y" };
+        //Проверка паролей
+        String[] passwords = {"Qwerty", "Adhgfn)$*%23y","1234567890" };
         boolean check = false;
         for (int i = 0; i < passwords.length; i++) {
-            if (passwords[i].length() > 8) {
-                if (passwords[i].charAt(0) != '1') {
-                    if (passwords[i].charAt(passwords[i].length() - 1) != 'z') {
-                        if (!passwords[i].contains("qwerty")) {
-                            if (!passwords[i].contains("1234")) {
-                                check = true;
-                            }
-                        }
-                    }
-                }
+            if (passwords[i].length() > 8 && passwords[i].charAt(0) != '1' && passwords[i].charAt(passwords[i].length() - 1) != 'z' && !passwords[i].contains("qwerty") && !passwords[i].contains("1234")) {
+                check = true;
+            } else {
+                check = false;
             }
             System.out.println("Пароль '" + passwords[i].toString() + "' прошел проверку: " + check);
         }
