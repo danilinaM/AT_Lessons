@@ -5,22 +5,26 @@ import java.util.Random;
 
 public class Lesson_5 {
     public static void main(String[] args) {
+        int minLength = 8;
+        int seeds[] = {42, 77, 13};
+        String prefix = "AGENT";
+
         String code = generateAccessCode();
-        System.out.println(isValidCode(code, 8));
+        System.out.println(isValidCode(code, minLength));
         logEvent("Server protection activated");
         logEvent("Intrusion attempt detected", true);
-        System.out.println(generateAgentId("AGENT", 42));
-        System.out.println(generateAgentId("AGENT", 77));
-        System.out.println(generateAgentId("AGENT", 13));
+        for (int seed : seeds) {
+            System.out.println(generateAgentId(prefix, seed));
+        }
     }
 
     public static String generateAccessCode() {
-        StringBuilder strb = new StringBuilder();
+        StringBuilder accessCodeBuilder = new StringBuilder();
         String firstPart = String.valueOf(LocalDate.now().getYear());
         String secondPart = "-";
         String thirdPart = String.valueOf((int) (Math.pow(3, 7)));
-        strb.append(firstPart).append(secondPart).append(thirdPart);
-        return strb.toString();
+        accessCodeBuilder.append(firstPart).append(secondPart).append(thirdPart);
+        return accessCodeBuilder.toString();
     }
 
     private static boolean isValidCode(String code, int minLength) {
@@ -39,7 +43,7 @@ public class Lesson_5 {
         }
     }
 
-    private static String generateAgentId(String prefix, int seed) {
+    public static String generateAgentId(String prefix, int seed) {
         Random random = new Random(seed);
         int randomNumber = random.nextInt(1000, 10000);
         return (prefix + "-" + randomNumber);
