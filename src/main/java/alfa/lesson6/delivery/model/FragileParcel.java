@@ -9,10 +9,14 @@ public class FragileParcel extends Parcel {
         this.requiresCarefulHandling = requiresCarefulHandling;
     }
 
+    @Override
     public double calculateDeliveryPrice() {
-        return super.calculateDeliveryPrice() + 200;
+
+        double deliveryPrice = super.calculateDeliveryPrice();
+        return deliveryPrice + 200;
     }
 
+    @Override
     public void printInfo() {
         super.printInfo();
         System.out.println("Handle with care: " + requiresCarefulHandling);

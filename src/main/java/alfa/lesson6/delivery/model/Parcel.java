@@ -2,10 +2,10 @@ package alfa.lesson6.delivery.model;
 
 public class Parcel {
 
-    private String recipientName;
-    private String deliveryAdress;
-    protected double deliveryWeigth;
-    String trackNumber;
+    private String recipientName = "Не указан";
+    private String deliveryAdress = "Не указан";
+    protected double deliveryWeigth = 0.0;
+    String trackNumber = "Не указан";
 
     public Parcel() {
     }
