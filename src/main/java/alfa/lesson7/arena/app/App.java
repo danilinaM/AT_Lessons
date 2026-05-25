@@ -19,8 +19,8 @@ public class App {
         }
 
         final Knight knight = new Knight("Borromir", 50, 2, true);
-        System.out.println(knight.toString());
+        System.out.println(knight);
         knight.takeDamage(3);
-        System.out.println(knight.toString());
+        System.out.println(knight);
     }
 }
