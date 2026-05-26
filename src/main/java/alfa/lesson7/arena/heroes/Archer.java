@@ -2,7 +2,7 @@ package alfa.lesson7.arena.heroes;
 
 public class Archer extends Hero {
 
-    public int arrowsCount;
+    private int arrowsCount;
 
     public Archer(String name, int level, int health, int arrowsCount) {
         super(name, level, health);

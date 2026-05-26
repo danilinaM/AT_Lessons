@@ -2,7 +2,7 @@ package alfa.lesson7.arena.heroes;
 
 public class Knight extends Hero{
 
-    public boolean armor;
+    private boolean armor;
 
     public Knight(String name, int level, int health, boolean armor) {
         super(name, level, health);

@@ -2,7 +2,7 @@ package alfa.lesson7.arena.heroes;
 
 public class Mage extends Hero {
 
-    public int mana;
+    private int mana;
 
     public Mage(String name, int level, int health, int mana) {
         super(name, level, health);

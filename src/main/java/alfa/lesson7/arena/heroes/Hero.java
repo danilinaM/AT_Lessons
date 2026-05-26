@@ -2,16 +2,40 @@ package alfa.lesson7.arena.heroes;
 
 public class Hero {
 
-    public String name;
-    public int level;
-    public int health;
-    public final static int MAX_LEVEL = 100;
+    private String name;
+    private int level;
+    private int health;
+    private final static int MAX_LEVEL = 100;
     private static int heroesCreated = 0;
 
+    public void setName(String name) {
+        if (name.isBlank()) {
+            throw new IllegalArgumentException("Name must contain at least 1 symbol");
+        } else {
+            this.name = name;
+        }
+    }
+
+    public void setLevel(int level) {
+        if (level < 0 || level > 100) {
+            throw new IllegalArgumentException("Level must be in range from 0 to 100");
+        } else {
+            this.level = level;
+        }
+    }
+
+    public void setHealth(int health) {
+        if (health < 0) {
+            throw new IllegalArgumentException("Health must be >=0");
+        } else {
+            this.health = health;
+        }
+    }
+
     public Hero(String name, int level, int health) {
-        this.name = name;
-        this.level = level;
-        this.health = health;
+        setName(name);
+        setLevel(level);
+        setHealth(health);
         heroesCreated++;
     }
 
