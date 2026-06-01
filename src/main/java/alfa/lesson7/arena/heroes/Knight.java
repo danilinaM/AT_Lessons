@@ -9,6 +9,14 @@ public class Knight extends Hero{
         this.armor = armor;
     }
 
+    public boolean getArmor() {
+        return armor;
+    }
+
+    public void setArmor(boolean armor) {
+        this.armor = armor;
+    }
+
     @Override
     public void attack(){
         System.out.println("Рыцарь бьёт мечом!");
