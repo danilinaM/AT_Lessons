@@ -6,14 +6,14 @@ import net.datafaker.Faker;
 import java.io.IOException;
 import java.util.Random;
 
-public class GenerateLogo {
+public class Logo {
 
     private String surnames[] = {"Jolie","Aniston","Pitt","Willis"};
 
-    public GenerateLogo(String[] surnames2) {
+    public Logo(String[] surnames2) {
         this.surnames = surnames2;
     }
-    public GenerateLogo(){
+    public Logo(){
     }
 
     String getRandomLastname(){

@@ -2,7 +2,7 @@ package alfa.lesson9;
 
 import net.datafaker.Faker;
 
-public class GenerateRegistrationData {
+public class RegistrationData {
    static private Faker faker = new Faker();
 
     static String generateFullName() {

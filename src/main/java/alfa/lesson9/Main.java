@@ -6,11 +6,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        GenerateLogo generateLogo = new GenerateLogo();
+        Logo generateLogo = new Logo();
         generateLogo.printLogo();
 
-        GenerateRegistrationData.generateFullName();
-        GenerateRegistrationData.generatePhoneNumber();
-        GenerateRegistrationData.generateAddress();
+        RegistrationData.generateFullName();
+        RegistrationData.generatePhoneNumber();
+        RegistrationData.generateAddress();
     }
 }
