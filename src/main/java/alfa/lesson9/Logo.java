@@ -8,22 +8,23 @@ import java.util.Random;
 
 public class Logo {
 
-    private String surnames[] = {"Jolie","Aniston","Pitt","Willis"};
+    private String surnames[] = {"Jolie", "Aniston", "Pitt", "Willis"};
 
     public Logo(String[] surnames2) {
         this.surnames = surnames2;
     }
-    public Logo(){
+
+    public Logo() {
     }
 
-    String getRandomLastname(){
+    String getRandomLastname() {
         Random random = new Random();
         int index = random.nextInt(surnames.length);
         System.out.println(surnames[index]);
         return surnames[index];
     }
 
-    String generateFakerLastname(){
+    String generateFakerLastname() {
         Faker faker = new Faker();
         String lastName = faker.name().lastName();
         System.out.println(lastName);
@@ -43,7 +44,7 @@ public class Logo {
         this.surnames = surnames;
     }
 
-    public String [] getSurnames() {
+    public String[] getSurnames() {
         return surnames;
     }
 }

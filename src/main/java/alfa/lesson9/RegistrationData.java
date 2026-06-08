@@ -3,7 +3,7 @@ package alfa.lesson9;
 import net.datafaker.Faker;
 
 public class RegistrationData {
-   static private Faker faker = new Faker();
+    static private Faker faker = new Faker();
 
     static String generateFullName() {
         String fullName = faker.name().fullName();
@@ -11,13 +11,13 @@ public class RegistrationData {
         return fullName;
     }
 
-   static String generatePhoneNumber(){
+    static String generatePhoneNumber() {
         String phoneNumber = faker.phoneNumber().phoneNumberInternational();
         System.out.println(phoneNumber);
         return phoneNumber;
     }
 
-   static String generateAddress(){
+    static String generateAddress() {
         String address = faker.address().fullAddress();
         System.out.println(address);
         return address;
