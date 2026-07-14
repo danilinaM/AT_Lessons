@@ -3,9 +3,9 @@ package alfa.lesson13;
 import java.util.List;
 
 public class MissionReport {
-    String missionName;
-    List<Alien> capturedAliens;
-    int squadSize;
+    private String missionName;
+    private List<Alien> capturedAliens;
+    private int squadSize;
 
     public MissionReport(String missionName, List<Alien> capturedAliens, int squadSize) {
         this.missionName = missionName;

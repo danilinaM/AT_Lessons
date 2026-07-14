@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Alien {
 
-    String name;
-    String planet;
-    int dangerLevel;
+    private String name;
+    private String planet;
+    private int dangerLevel;
 
     public Alien(String name, String planet, int dangerLevel) {
         this.name = name;

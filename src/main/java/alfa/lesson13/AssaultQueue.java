@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class AssaultQueue {
 
-    LinkedList<String> queue;
+    private LinkedList<String> queue;
 
     public AssaultQueue(LinkedList<String> queue) {
         this.queue = queue;
