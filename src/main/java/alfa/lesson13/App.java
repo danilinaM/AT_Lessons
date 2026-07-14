@@ -45,7 +45,7 @@ public class App {
         if (arr.size() != set.size()) {
             System.out.println("Array have duplicates");
         } else {
-            System.out.println("Array doent have duplicates");
+            System.out.println("Array doesnt have duplicates");
         }
     }
 }
