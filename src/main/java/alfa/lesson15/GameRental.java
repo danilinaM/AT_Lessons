@@ -87,4 +87,10 @@ public class GameRental {
         }
         return map.get(name).getRentPrice() * days;
     }
+
+    public static void reset() {
+        for (Map.Entry<String, BoardGame> entry : map.entrySet()) {
+            entry.getValue().setRented(false);
+        }
+    }
 }

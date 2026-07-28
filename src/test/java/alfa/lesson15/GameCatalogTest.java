@@ -17,26 +17,17 @@ public class GameCatalogTest {
 
     static ArrayList<BoardGame> arrayList = new ArrayList<>();
     GameRental gameRental = new GameRental(arrayList);
-    static int arraySize;
 
     @BeforeAll
     public static void fillArray() {
         arrayList.add(new BoardGame("Monopoly", 5, 2000));
         arrayList.add(new BoardGame("Cards", 50, 200));
         arrayList.add(new BoardGame("Chess", 12, 10000));
-        arraySize = arrayList.size();
     }
 
     @AfterAll
     public static void clearArray() {
         arrayList.clear();
-    }
-
-    @AfterEach
-    public void clearAddedElement() {
-        if (arrayList.size() != arraySize) {
-            arrayList.removeLast();
-        }
     }
 
     public static Stream<Arguments> gameProvider() {
