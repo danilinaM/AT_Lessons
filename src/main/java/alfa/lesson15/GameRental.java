@@ -6,8 +6,16 @@ import java.util.Map;
 
 public class GameRental {
 
-    private static ArrayList<BoardGame> boardGames = new ArrayList<>();
-    private Map<String, BoardGame> map = new HashMap<>();
+    public void setMap(Map<String, BoardGame> map) {
+        this.map = map;
+    }
+
+    private ArrayList<BoardGame> boardGames = new ArrayList<>();
+    private static Map<String, BoardGame> map = new HashMap<>();
+
+    public GameRental(Map<String, BoardGame> map) {
+        this.map = map;
+    }
 
     public GameRental(ArrayList<BoardGame> boardGames) {
         this.boardGames = boardGames;
@@ -71,6 +79,12 @@ public class GameRental {
         }
         map.get(name).setRented(false);
         return true;
+    }
 
+    public static int calculateCost(String name, int days) {
+        if (map.get(name) == null || days <= 0) {
+            throw new IllegalArgumentException();
+        }
+        return map.get(name).getRentPrice() * days;
     }
 }
