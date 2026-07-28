@@ -61,4 +61,16 @@ public class GameRental {
         game.setRented(true);
         return true;
     }
+
+    public static boolean returnGame(Map<String, BoardGame> map, String name) {
+        if (map.get(name) == null) {
+            return false;
+        }
+        if (!map.get(name).isRented()) {
+            return false;
+        }
+        map.get(name).setRented(false);
+        return true;
+
+    }
 }
