@@ -1,8 +1,8 @@
-package lesson14;
+package alfa.lesson14;
 
 import org.junit.jupiter.api.Test;
 
-import static lesson14.XMLUtils.createEmptyElement;
+import static alfa.lesson14.XMLUtils.createEmptyElement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCreateEmptyElements {

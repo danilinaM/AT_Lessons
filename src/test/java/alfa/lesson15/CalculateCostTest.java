@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CalculateCostTest {
 
     static Map<String, BoardGame> gamesMap = new HashMap<>();
-    GameRental gameRental = new GameRental(gamesMap);
 
     @BeforeAll
     public static void fillArray() {
