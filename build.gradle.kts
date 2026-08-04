@@ -14,6 +14,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("net.datafaker:datafaker:2.5.4")
     implementation("com.github.lalyos:jfiglet:0.0.8")
+    testImplementation("io.cucumber:cucumber-java:7.34.4")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:7.34.4")
+    testImplementation ("org.junit.platform:junit-platform-suite:1.14.0")
 }
 
 tasks.test {
