@@ -12,10 +12,10 @@ public class FormAuthLoginPage {
     SelenideElement password = Selenide.$("form#login input#password");
     SelenideElement buttonLogin = Selenide.$("form#login button[class='radius']");
     SelenideElement linkElementalSelenium = Selenide.$x("//a[text()='Elemental Selenium']");
-    SelenideElement errorMessageWrongUsername = Selenide.$("#flash");
+    SelenideElement loginResultMessage = Selenide.$("#flash");
 
-    public void checkTextOfTitle() {
-        titleBeforeLogin.shouldHave(text("Login Page"));
+    public void checkTextOfTitle(String value) {
+        titleBeforeLogin.shouldHave(text(value));
     }
 
     public void enterValueInNameField(String value) {
@@ -40,9 +40,9 @@ public class FormAuthLoginPage {
         return new FormAuthLoginPage();
     }
 
-    public void errorMessageWhenWrongNameCheckText(String text) {
-        errorMessageWrongUsername.shouldBe(visible);
-        errorMessageWrongUsername.shouldHave(text(text));
+    public void checkMessageText(String text) {
+        loginResultMessage.shouldBe(visible);
+        loginResultMessage.shouldHave(text(text));
     }
 
     public void checkElementalSeleniumLinkText(String text) {

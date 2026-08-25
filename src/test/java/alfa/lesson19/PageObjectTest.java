@@ -20,18 +20,19 @@ public class PageObjectTest extends BaseTest {
     String textAfterLogin = "You logged into a secure area!";
     String elementalSeleniumLinkText = "Elemental Selenium";
     String messageWhenInvalidName = "Your username is invalid!";
+    String loginPageTitle ="Login Page";
 
     @Test
     public void successfulLoginAndLogout() {
         Selenide.open(baseUrl);
         formAuthLoginPage = mainPage.clickFormAuthPage();
-        formAuthLoginPage.checkTextOfTitle();
+        formAuthLoginPage.checkTextOfTitle(loginPageTitle);
         formAuthLoginPage.enterValueInNameField(correctName);
         formAuthLoginPage.enterValueInPasswordField(correctPassword);
         secureAreaPage = formAuthLoginPage.clickLoginButtonWithCorrectCreds();
-        secureAreaPage.checkTitleAfterLoginText(textAfterLogin);
+        secureAreaPage.checkMessageText(textAfterLogin);
         formAuthLoginPage = secureAreaPage.logout();
-        formAuthLoginPage.checkTextOfTitle();
+        formAuthLoginPage.checkTextOfTitle(loginPageTitle);
     }
 
     @Test
@@ -42,7 +43,7 @@ public class PageObjectTest extends BaseTest {
         formAuthLoginPage.enterValueInNameField(wrongName);
         formAuthLoginPage.enterValueInPasswordField(wrongPassword);
         formAuthLoginPage.clickLoginButtonWithWrongCreds();
-        formAuthLoginPage.errorMessageWhenWrongNameCheckText(messageWhenInvalidName);
+        formAuthLoginPage.checkMessageText(messageWhenInvalidName);
     }
 
 }

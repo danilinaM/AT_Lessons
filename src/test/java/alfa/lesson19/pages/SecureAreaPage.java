@@ -8,16 +8,19 @@ import static com.codeborne.selenide.Condition.visible;
 
 public class SecureAreaPage {
 
-    SelenideElement titleAfterLogin = Selenide.$("#flash");
+    SelenideElement loginResultMessage = Selenide.$("#flash");
     SelenideElement buttonLogout = Selenide.$("div a[class='button secondary radius']");
 
-    public void checkTitleAfterLoginText(String text) {
-        titleAfterLogin.shouldBe(visible);
-        titleAfterLogin.shouldHave(text(text));
+    public void checkMessageText(String text) {
+        loginResultMessage.shouldBe(visible);
+        loginResultMessage.shouldHave(text(text));
+    }
+
+    public void checkLogoutButtonVisible() {
+        buttonLogout.shouldBe(visible);
     }
 
     public FormAuthLoginPage logout() {
-        buttonLogout.shouldBe(visible);
         buttonLogout.click();
         return new FormAuthLoginPage();
     }
