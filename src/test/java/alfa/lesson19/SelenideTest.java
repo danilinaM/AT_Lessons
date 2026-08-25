@@ -1,6 +1,5 @@
 package alfa.lesson19;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
@@ -18,7 +17,7 @@ public class SelenideTest extends BaseTest{
     SelenideElement password = Selenide.$("form#login input#password");
     SelenideElement buttonLogin = Selenide.$("form#login button[class='radius']");
     SelenideElement buttonLogout = Selenide.$("div a[class='button secondary radius']");
-    SelenideElement linkBeforeLogin = Selenide.$x("//a[text()='Elemental Selenium']");
+    SelenideElement linkElementalSelenium = Selenide.$x("//a[text()='Elemental Selenium']");
     SelenideElement errorMessageWrongUsername = Selenide.$("#flash");
 
     @Test
@@ -46,7 +45,8 @@ public class SelenideTest extends BaseTest{
         Selenide.open(baseUrl);
         formAuthefication.shouldBe(visible);
         formAuthefication.click();
-        linkBeforeLogin.shouldBe(visible);
+        linkElementalSelenium.shouldBe(visible);
+        linkElementalSelenium.shouldHave(text("Elemental Selenium"));
         userName.shouldBe(visible);
         userName.setValue("admin");
         password.shouldBe(visible);
